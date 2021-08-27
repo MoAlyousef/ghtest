@@ -27,4 +27,4 @@ jobs:
       shell: bash
     - uses: seanmiddleditch/gha-setup-ninja@master
     - name: Build
-      run: cargo build --verbose
+      run: cmake -Bbuild
