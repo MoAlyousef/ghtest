@@ -15,7 +15,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, macos-10.15, ubuntu-18.04]
+        os: [macos-10.15, ubuntu-18.04]
 
     steps:
     - uses: actions/checkout@v2
@@ -27,4 +27,4 @@ jobs:
       shell: bash
     - uses: seanmiddleditch/gha-setup-ninja@master
     - name: Build
-      run: cmake -Bbuild
+      run: cargo build
