@@ -14,8 +14,8 @@ fn main() {
         let win = window::Fl_Gl_Window_new(100, 100, 400, 300, "Window\0".as_ptr() as *const _);
         let frame = frame::Fl_Box_new(0, 0, 400, 200, std::ptr::null());
         let but = button::Fl_Button_new(160, 220, 80, 40, "Click\0".as_ptr() as *const _);
-        window::Fl_Window_end(win);
-        window::Fl_Window_show(win);
+        window::Fl_Gl_Window_end(win);
+        window::Fl_Gl_Window_show(win);
 
         button::Fl_Button_set_callback(but, Some(cb), frame as *mut _);
 
