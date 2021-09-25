@@ -19,11 +19,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: seanmiddleditch/gha-setup-ninja@master
     - name: Build
-      run: cargo build
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: lib_${{ matrix.os }}
-        path: target/debug/build/**/out/lib
+      run: uname -a
