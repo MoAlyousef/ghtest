@@ -15,9 +15,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest]
+        os: [ubuntu-latest]
 
     steps:
+    - name: Download deps
+      run: |
+         if [ "$RUNNER_OS" == "Linux" ]; then
+          sudo apt-get update && sudo apt-get install -y libsdl2-dev
+         fi
+      shell: bash
     - uses: actions/checkout@v2
     - uses: seanmiddleditch/gha-setup-ninja@master
     - name: Build
