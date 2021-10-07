@@ -27,4 +27,4 @@ jobs:
     - uses: actions/checkout@v2
     - uses: seanmiddleditch/gha-setup-ninja@master
     - name: Build
-      run: cargo build
+      run: git clone https://github.com/MCOfficer/bitwarden-autotype && cd bitwarden-autotype && cargo build
